@@ -1,9 +1,9 @@
-variable "env" {
-    type = string
-}
+# variable "env" {
+#     type = string
+# }
 
-variable "region" {
-    type = string
-}
+# variable "region" {
+#     type = string
+# }
 
-###added variables on VPC modules###
+# ###added variables on VPC modules###
