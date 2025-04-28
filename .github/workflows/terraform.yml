@@ -99,5 +99,16 @@ jobs:
         with:
           terraform_version: 1.10.5
 
+      - name: Check if there are no changes before destroying
+        run: |
+          terraform plan -out=tfplan
+          if [ -z "$(terraform show -json tfplan | jq '.resource_changes')" ]; then
+            echo "No changes detected, proceeding with destroy."
+          else
+            echo "Changes detected, proceeding with destroy."
+          fi
+        id: check_destroy
+
       - name: Terraform Destroy
         run: terraform destroy -auto-approve
+        if: always()  # Always run the destroy step after the plan check
