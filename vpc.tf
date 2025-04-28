@@ -11,6 +11,4 @@ module "vpc" {
   nat_gw_name          = "dev-nat"
   public_subnet_count  = 2
   private_subnet_count = 2
-#   region               = "us-east-1"
-#   env                  = "dev"
 }
