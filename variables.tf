@@ -5,3 +5,5 @@ variable "env" {
 variable "region" {
     type = string
 }
+
+###added variables on VPC modules
