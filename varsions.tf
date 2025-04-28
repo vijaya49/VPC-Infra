@@ -10,7 +10,7 @@ terraform {
 
   backend "s3" {
     bucket = "my-reception-memories"
-    key    = "vpc/${var.env}/terraform.tfstate" 
+    key    = "vpc/dev/terraform.tfstate" 
     region = "us-east-1"
     encrypt = true
     use_lockfile = true 
