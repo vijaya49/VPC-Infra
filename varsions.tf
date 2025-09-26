@@ -1,19 +1,19 @@
 terraform {
-  required_version = ">= 1.10.5"
-
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5.0"
+      version = "~> 6.0"
     }
   }
-
+}
+# state.tf
+terraform {
   backend "s3" {
-    bucket = "my-reception-memories"
-    key    = "vpc/dev/terraform.tfstate" 
-    region = "us-east-1"
-    encrypt = true
-    use_lockfile = true 
+    bucket       = "my-profile-state-bucket01"
+    key          = "vpc/terraform.tfstate"
+    region       = "us-east-1"
+    encrypt      = true
+    use_lockfile = true # Enable S3 native state locking
   }
 }
 ######## assume role method testing ########
